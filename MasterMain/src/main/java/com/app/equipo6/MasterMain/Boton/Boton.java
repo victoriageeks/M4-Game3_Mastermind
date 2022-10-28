@@ -9,6 +9,10 @@ public class Boton {
 	private JButton button;
 	private Color color;
 	
+	public Boton(JButton button) {
+		this.button = button;
+	}
+
 	//metodos
 	public void setColor(Color color) {
 		button.setForeground(color);
