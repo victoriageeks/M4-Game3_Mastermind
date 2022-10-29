@@ -9,6 +9,10 @@ public class Control {
 		Color[] respuesta = new Color[a.length];
 		boolean[] auxb = new boolean[a.length];
 		boolean[] auxa = new boolean[a.length];
+		for (int i = 0; i < respuesta.length; i++) {
+			 respuesta[i]= new Color(160,160,160);
+			
+		}
 		//if es true pintamos una casilla con negro si es false
 		//marcamos las casillas como no resuelta
 		for (int i = 0; i < a.length; i++) {
@@ -48,12 +52,7 @@ public class Control {
 					}
 				}
 			}
-		for (int  i= 0; i < auxa.length; i++) {
-			if(respuesta[i] == null) {
-				respuesta[count]= new Color(160,160,160);
-			}
 				
-		}
 		return respuesta;
 		}
 		//si el color y posicion coinciden devuelve true
