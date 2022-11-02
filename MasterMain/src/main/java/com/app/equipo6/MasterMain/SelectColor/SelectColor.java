@@ -34,6 +34,7 @@ public class SelectColor extends JFrame {
 	 * Create the frame.
 	 */
 	public SelectColor() {
+		this.color = null;
 		setType(Type.UTILITY);
 		setTitle("PictureBox");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
