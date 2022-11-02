@@ -1,15 +1,10 @@
 package com.app.equipo6.MasterMain.testControl;
 
-import java.awt.Color;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import com.app.equipo6.MasterMain.SelectColor.SelectColor;
-
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

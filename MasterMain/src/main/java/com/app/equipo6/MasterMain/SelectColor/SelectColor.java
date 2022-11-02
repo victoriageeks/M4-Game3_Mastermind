@@ -1,14 +1,11 @@
 package com.app.equipo6.MasterMain.SelectColor;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
-import java.awt.Window.Type;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -16,11 +13,8 @@ public class SelectColor extends JFrame {
 
 	private JPanel contentPane;
 	private JButton jb;
-	private Boolean flag;
-	private int cantidadColor;
 	
 	public SelectColor(JButton jb, int i) {
-		this.cantidadColor = i;
 		this.jb = jb;
 		setType(Type.UTILITY);
 		setTitle("PictureBox");
@@ -110,9 +104,7 @@ public class SelectColor extends JFrame {
 				setColor(jb,Color.PINK);
 			}
 		});
-		
-		
-		
+	
 	}
 	//recibe un boton y le asigna un color cuando lo asigna
 	//se elimina este frame

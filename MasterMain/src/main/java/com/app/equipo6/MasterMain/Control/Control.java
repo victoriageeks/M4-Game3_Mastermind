@@ -26,8 +26,6 @@ public class Control {
 				auxb[i] = false;
 			}
 		} 
-		System.out.println(auxa[0] + "-" +auxa[1]+ "-" +auxa[2]+ "-" +auxa[3] );
-		System.out.println(auxb[0] + "-" +auxb[1]+ "-" +auxb[2]+ "-" +auxb[3] );
 		//si la casilla auxb es true resulta que a[i] y b[i] son iguales y ya esta pintado
 		//si es false analizamos si hay un color restante que coincida
 		
@@ -61,10 +59,8 @@ public class Control {
 			System.out.println("b:" + b[i].getRed()+ "-" + b[i].getGreen() +"-" + b[i].getBlue());
 			if(a[i].getRed() == b[i].getRed() && a[i].getGreen() == b[i].getGreen()&&
 					a[i].getBlue() == b[i].getBlue()) {
-				System.out.println("True");
 				return true;
 		}
-			System.out.println("false");
 			return false;
 	}
 		
