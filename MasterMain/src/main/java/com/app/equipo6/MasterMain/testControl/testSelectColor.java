@@ -47,7 +47,7 @@ public class testSelectColor extends JFrame {
 		JButton btnNewButton = new JButton();
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				asignarColor(btnNewButton);
+				asignarColor(btnNewButton,1);
 			}
 		});
 		btnNewButton.setBounds(31, 31, 189, 111);
@@ -55,8 +55,8 @@ public class testSelectColor extends JFrame {
 		
 		button = btnNewButton;
 	}
-	public void asignarColor(JButton jb){
-		SelectColor st = new SelectColor(button);
+	public void asignarColor(JButton jb, int n){
+		SelectColor st = new SelectColor(button,n);
 		st.setVisible(true);
 	}
 }
