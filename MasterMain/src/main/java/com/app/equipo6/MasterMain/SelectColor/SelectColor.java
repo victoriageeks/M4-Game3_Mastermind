@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
@@ -14,27 +15,10 @@ import java.awt.event.ActionEvent;
 public class SelectColor extends JFrame {
 
 	private JPanel contentPane;
-	private Color color;
+	private JButton jb;
 	
-	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					SelectColor frame = new SelectColor();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public SelectColor() {
-		this.color = null;
+	public SelectColor(JButton jb) {
+		this.jb = jb;
 		setType(Type.UTILITY);
 		setTitle("PictureBox");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -110,75 +94,78 @@ public class SelectColor extends JFrame {
 		
 		btnBlack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.black);
+				setColor(jb,Color.black);
 			}
 		});
 		
 		btnWhite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.white);
+				setColor(jb,Color.white);
 			}
 		});
 		
 		btnRed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.red);
+				setColor(jb,Color.red);
 			}
 		});
 		
 		btnGreen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.GREEN);
+				setColor(jb,Color.GREEN);
 			}
 		});
 		
 		btnBlue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.blue);
+				setColor(jb,Color.blue);
 			}
 		});
 		
 		btnCyan.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.CYAN);
+				setColor(jb,Color.CYAN);
 			}
 		});
 		
 		btnOrange.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.ORANGE);
+				setColor(jb,Color.ORANGE);
 			}
 		});
 		btnPink.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.PINK);
+				setColor(jb,Color.PINK);
 			}
 		});
 		btnYellow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.YELLOW);
+				setColor(jb,Color.YELLOW);
 			}
 		});
 		btnLigthGray.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.lightGray);
+				setColor(jb,Color.lightGray);
 			}
 		});
 		btnDarkGray.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(Color.darkGray);
+				setColor(jb,Color.darkGray);
 			}
 		});
 		btnPurple.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getColor(new Color(255,44,233));
+				setColor(jb,new Color(255,44,233));
 			}
 		});
 		
 		
 		
 	}
-	public void getColor(Color color) {
-		this.color = color;
+	public void setColor(JButton jb,Color color) {
+		jb.setBackground(color);
+		this.dispose();
 	}
+	
+	
 }
