@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Problema {
+	
+	public Problema() {}
+	
 	public Color[] getProblema(int i) {
 		ArrayList<Color> colores= new ArrayList<>();
 		colores.add(Color.ORANGE);
