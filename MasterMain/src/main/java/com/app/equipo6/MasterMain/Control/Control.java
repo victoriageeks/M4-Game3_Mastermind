@@ -3,9 +3,17 @@ package com.app.equipo6.MasterMain.Control;
 import java.awt.Color;
 
 public class Control {
+	private int contador;
+	private Color[] resp;
 	
-	public Color[] respuesta(Color[] a,Color[] b) {
+	public Control(Color[] respuesta) {
+		this.contador=0;
+		this.resp=respuesta;
+	}
+	public Color[] respuesta(Color[] b) {
 		int count = 0;
+		Color[] a=this.resp;
+		this.contador++;
 		Color[] respuesta = new Color[a.length];
 		boolean[] auxb = new boolean[a.length];
 		boolean[] auxa = new boolean[a.length];
@@ -50,13 +58,14 @@ public class Control {
 					}
 				}
 			}
-				
+		for (Color color : respuesta) {
+			System.out.println("c1:" + color.getRed() + color.getGreen() + color.getGreen());
+		}
 		return respuesta;
 		}
 		//si el color y posicion coinciden devuelve true
 		public boolean control(Color[] a,Color b[],int i) {
-			System.out.println("a:" + a[i].getRed()+ "-" + a[i].getGreen() +"-" + a[i].getBlue());
-			System.out.println("b:" + b[i].getRed()+ "-" + b[i].getGreen() +"-" + b[i].getBlue());
+		
 			if(a[i].getRed() == b[i].getRed() && a[i].getGreen() == b[i].getGreen()&&
 					a[i].getBlue() == b[i].getBlue()) {
 				return true;
@@ -68,8 +77,8 @@ public class Control {
 			if(a[j].getRed() == b[i].getRed() && a[j].getGreen() == b[i].getGreen()
 					&& a[j].getBlue() == b[i].getBlue()) {
 				return true;
-		}
-			return false;
 			}
-	
+			return false;
+		}
+		
 }

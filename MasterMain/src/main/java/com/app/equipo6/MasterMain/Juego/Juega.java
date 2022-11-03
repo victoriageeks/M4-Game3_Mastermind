@@ -2,8 +2,6 @@ package com.app.equipo6.MasterMain.Juego;
 
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import com.app.equipo6.MasterMain.Boton.Boton;
 import com.app.equipo6.MasterMain.Control.Control;
 
 import java.awt.Color;
@@ -19,12 +17,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Juega extends JPanel {
-	public Juega(Juego juego) {
-		initJuego(juego);
+	public Juega(Juego juego, Control control) {
+		initJuego(juego,control);
 		
 		
 	}
-	private void initJuego(Juego juego) {
+	private void initJuego(Juego juego, Control control) {
 		setForeground(new Color(0, 0, 0));
 		setBackground(new Color(255, 255, 255));
 		setLayout(null);
@@ -185,8 +183,7 @@ public class Juega extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				comp.setVisible(false);
 				juego.setIntento(juego.getIntento()+1);
-				Control prueba= new Control();
-				prueba.respuesta(juego.getColorresp(),new Color[] {new Color(255,0,0),new Color(255,0,0),new Color(255,0,0),new Color(255,0,0)});
+				control.respuesta(juego.getColorresp());
 			}
 		});
 		comp.setBounds(292,32,59,32);

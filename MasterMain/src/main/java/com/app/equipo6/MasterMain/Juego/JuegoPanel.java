@@ -5,22 +5,23 @@ import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 
+import com.app.equipo6.MasterMain.Control.Control;
+
 public class JuegoPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 * @param juego 
+	 * @param control 
 	 */
-	public JuegoPanel(Juego juego) {
+	public JuegoPanel(Juego juego, Control control) {
 		
 		setForeground(new Color(0, 0, 0));
 		setBackground(new Color(255, 255, 255));
 		setLayout(new GridLayout(8,1));
 		Juega[] paneles =new Juega[juego.getMaxintent()];
-		paneles[0]=new Juega(juego);
-		paneles[0].setVisible(true);
-		add(paneles[0]);
-		for(int i=1;i<juego.getMaxintent();i++) {
-			paneles[i]=new Juega(juego);
+		
+		for(int i=0;i<juego.getMaxintent();i++) {
+			paneles[i]=new Juega(juego,control);
 			paneles[i].setVisible(true);
 			add(paneles[i]);
 		}

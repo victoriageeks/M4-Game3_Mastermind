@@ -23,7 +23,7 @@ public class Problema {
 			colores.remove(Color.CYAN);
 		}
 		Collections.shuffle(colores);
-		Color[] colors = new Color[i];
+		Color[] colors = new Color[colores.size()];
 		int aux = 0;
 		for (Color color : colores) {
 			colors[aux] = color;
