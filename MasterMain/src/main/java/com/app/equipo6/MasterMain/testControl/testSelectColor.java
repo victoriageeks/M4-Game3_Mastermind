@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.app.equipo6.MasterMain.Problema.Problema;
 import com.app.equipo6.MasterMain.SelectColor.SelectColor;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -20,6 +22,9 @@ public class testSelectColor extends JFrame {
 				try {
 					testSelectColor frame = new testSelectColor();
 					frame.setVisible(true);
+					Problema prob= new Problema();
+					SelectColor selectColor = new SelectColor();
+					prob.getProblema(selectColor.getColors(),1) ;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -51,7 +56,7 @@ public class testSelectColor extends JFrame {
 		button = btnNewButton;
 	}
 	public void asignarColor(JButton jb, int n){
-		SelectColor st = new SelectColor(button,n);
+		SelectColor st = new SelectColor();
 		st.setVisible(true);
 	}
 }

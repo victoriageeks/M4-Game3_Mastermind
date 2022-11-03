@@ -9,22 +9,22 @@ public class testControl {
 	
 	
 	public static void main(String[] args) {
-		Control control = new Control();
 		Color[] c1 = new Color[5];
 		c1[0] = new Color(255,51,51);
 		c1[1] = new Color(0,0,150);
 		c1[2] = new Color(0,0,255);
 		c1[3] = new Color(255,0,0);
 		c1[4] = new Color(0,0,150);
+		//Control control = new Control(c1);
 		Color[] c2 = new Color[5];
 		c2[0] = new Color(255,51,51);
 		c2[1] = new Color(0,0,255);
 		c2[2] = new Color(0,0,150);
 		c2[3] = new Color(255,0,0);
 		c2[4] = new Color(0,0,150);
-		Color[] c = control.respuesta(c1, c2);
+		//Color[] c = control.respuesta(c2);
 		
-		show(c);
+		//show(c);
 	}
 	
 	public static void show(Color[] c) {

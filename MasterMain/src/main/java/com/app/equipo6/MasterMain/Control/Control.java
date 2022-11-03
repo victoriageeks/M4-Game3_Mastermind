@@ -1,14 +1,24 @@
 package com.app.equipo6.MasterMain.Control;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class Control {
 	private int contador;
 	private Color[] resp;
+	private ArrayList<Color> intentos;
 	
+	public int getContador() {
+		return contador;
+	}
+
+	public ArrayList<Color> getIntentos() {
+		return intentos;
+	}
+
 	public Control(Color[] respuesta) {
-		this.contador=0;
-		this.resp=respuesta;
+		this.contador = 0;
+		this.resp = respuesta;
 	}
 	public Color[] respuesta(Color[] b) {
 		int count = 0;
@@ -58,9 +68,6 @@ public class Control {
 					}
 				}
 			}
-		for (Color color : respuesta) {
-			System.out.println("c1:" + color.getRed() + color.getGreen() + color.getGreen());
-		}
 		return respuesta;
 		}
 		//si el color y posicion coinciden devuelve true

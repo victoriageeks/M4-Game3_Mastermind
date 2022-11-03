@@ -5,32 +5,60 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Problema {
+	private Color[] respuesta;
+	private Color[] coloresDisponibles;
 	
-	public Problema() {}
-	
-	public Color[] getProblema(int i) {
-		ArrayList<Color> colores= new ArrayList<>();
-		colores.add(Color.ORANGE);
-		colores.add(Color.PINK);
-		colores.add(Color.RED);
-		colores.add(Color.green);
-		colores.add(Color.BLUE);
-		colores.add(Color.CYAN);
-		if(i == 1) {
-			colores.remove(Color.BLUE);
-			colores.remove(Color.CYAN);
-		}else if(i == 2) {
-			colores.remove(Color.CYAN);
+	public Problema(ArrayList<Color> colores,int i) {
+		Color[] colors = getColoresDisponibles(colores,i);
+		for (int j = 0; j < colors.length; j++) {
+			int random = (int) (Math.random() * (colors.length-1));
+			colors[j] = colors[random]; 
+			System.out.println(random);
+			
 		}
+		this.respuesta = colors;
+	}
+	
+	public Color[] getRespuesta() {
+		return respuesta;
+	}
+
+	public Color[] getColoresDisponibles() {
+		return coloresDisponibles;
+	}
+
+	
+	private Color[] getColoresDisponibles(ArrayList<Color> colores,int i) {
 		Collections.shuffle(colores);
+		//borramos los colores sobrantes segun el nivel
+			for (int j = nivel(i); j < colores.size(); j++) {
+				colores.remove(j);
+				}
+			int aux = (colores.size()-1);
+				colores.remove(aux);
 		Color[] colors = new Color[colores.size()];
-		int aux = 0;
+		aux = 0;
 		for (Color color : colores) {
 			colors[aux] = color;
 			aux++;
-			if(aux == (i-1)) {break;}
 		}
+		for (int j = 0; j < colors.length; j++) {
+			System.out.println("c1:" + colors[j].getRed() 
+			+ colors[j].getGreen() 
+			+ colors[j].getGreen());
+		}
+		this.coloresDisponibles = colors;
 		return colors;
+	}
+	
+	//segun el nivel seleciona una cantidad minima de colores
+	private int nivel(int i) {
+		switch (i) {
+		case 1: return 0;
+		case 2: return 2;
+		case 3: return 4;
+		default: return 4;
+		}
 	}
 	
 }
