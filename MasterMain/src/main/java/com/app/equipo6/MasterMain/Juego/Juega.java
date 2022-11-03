@@ -32,23 +32,23 @@ public class Juega extends JPanel {
 		button1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(MouseEvent.BUTTON2==e.getButton()) {
-					Color color=button1.getForeground();
+				if(MouseEvent.BUTTON3==e.getButton()) {
+					Color color=button1.getBackground();
 					color=Juego.cambiaColorMenos(color,juego.getColordef());
-					button1.setForeground(color);
+					button1.setBackground(color);
 					juego.setColorresp(0, color);
 					
 				}
 				if(MouseEvent.BUTTON1==e.getButton()) {
-					Color color=button1.getForeground();
+					Color color=button1.getBackground();
 					color=Juego.cambiaColorMas(color,juego.getColordef());
-					button1.setForeground(color);
+					button1.setBackground(color);
 					juego.setColorresp(0, color);
 					
 				}
 			}
 		});
-		button1.setForeground(juego.getColordef(0));
+		button1.setBackground(juego.getColordef(0));
 		button1.setBounds(57,27,37,37);
 		add(button1);
 		
@@ -56,22 +56,22 @@ public class Juega extends JPanel {
 		button2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(MouseEvent.BUTTON2==e.getButton()) {
-					Color color=button2.getForeground();
+				if(MouseEvent.BUTTON3==e.getButton()) {
+					Color color=button2.getBackground();
 					color=Juego.cambiaColorMenos(color,juego.getColordef());
-					button2.setForeground(color);
+					button2.setBackground(color);
 					juego.setColorresp(1, color);
 					
 				}
 				if(MouseEvent.BUTTON1==e.getButton()) {
-					Color color=button2.getForeground();
+					Color color=button2.getBackground();
 					color=Juego.cambiaColorMas(color, juego.getColordef());
-					button2.setForeground(color);
+					button2.setBackground(color);
 					juego.setColorresp(1, color);
 				}
 			}
 		});
-		button2.setForeground(juego.getColordef(0));
+		button2.setBackground(juego.getColordef(0));
 		button2.setBounds(104,27,37,37);
 		add(button2);
 		
@@ -79,24 +79,24 @@ public class Juega extends JPanel {
 		button3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(MouseEvent.BUTTON2==e.getButton()) {
-					Color color=button3.getForeground();
+				if(MouseEvent.BUTTON3==e.getButton()) {
+					Color color=button3.getBackground();
 					color=Juego.cambiaColorMenos(color,juego.getColordef());
-					button3.setForeground(color);
+					button3.setBackground(color);
 					juego.setColorresp(2, color);
 					
 				}
 				if(MouseEvent.BUTTON1==e.getButton()) {
-					Color color=button3.getForeground();
+					Color color=button3.getBackground();
 					color=Juego.cambiaColorMas(color,juego.getColordef());
-					button3.setForeground(color);
+					button3.setBackground(color);
 					juego.setColorresp(2, color);
 					
 					
 				}
 			}
 		});
-		button3.setForeground(juego.getColordef(0));
+		button3.setBackground(juego.getColordef(0));
 		button3.setBounds(151,27,37,37);
 		add(button3);
 		
@@ -104,24 +104,24 @@ public class Juega extends JPanel {
 		button4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(MouseEvent.BUTTON2==e.getButton()) {
-					Color color=button4.getForeground();
+				if(MouseEvent.BUTTON3==e.getButton()) {
+					Color color=button4.getBackground();
 					color=Juego.cambiaColorMenos(color,juego.getColordef());
-					button4.setForeground(color);
+					button4.setBackground(color);
 					juego.setColorresp(3, color);
 					
 				}
 				if(MouseEvent.BUTTON1==e.getButton()) {
-					Color color=button4.getForeground();
+					Color color=button4.getBackground();
 					color=Juego.cambiaColorMas(color,juego.getColordef());
-					button4.setForeground(color);
+					button4.setBackground(color);
 					juego.setColorresp(3, color);
 					
 					
 				}
 			}
 		});
-		button4.setForeground(juego.getColordef()[0]);
+		button4.setBackground(juego.getColordef()[0]);
 		button4.setBounds(198,27,37,37);
 		add(button4);
 		
@@ -130,23 +130,23 @@ public class Juega extends JPanel {
 		button5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(MouseEvent.BUTTON2==e.getButton()) {
-					Color color=button5.getForeground();
+				if(MouseEvent.BUTTON3==e.getButton()) {
+					Color color=button5.getBackground();
 					color=Juego.cambiaColorMenos(color,juego.getColordef());
-					button5.setForeground(color);
+					button5.setBackground(color);
 					juego.setColorresp(4, color);
 					
 				}
 				if(MouseEvent.BUTTON1==e.getButton()) {
-					Color color=button5.getForeground();
+					Color color=button5.getBackground();
 					color=Juego.cambiaColorMas(color,juego.getColordef());
-					button5.setForeground(color);
+					button5.setBackground(color);
 					juego.setColorresp(4, color);
 					
 				}
 			}
 		});
-		button5.setForeground(juego.getColordef()[0]);
+		button5.setBackground(juego.getColordef()[0]);
 		button5.setBounds(245,27,37,37);
 		add(button5);
 		
@@ -155,23 +155,23 @@ public class Juega extends JPanel {
 		button6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(MouseEvent.BUTTON2==e.getButton()) {
-					Color color=button6.getForeground();
+				if(MouseEvent.BUTTON3==e.getButton()) {
+					Color color=button6.getBackground();
 					color=Juego.cambiaColorMenos(color,juego.getColordef());
-					button6.setForeground(color);
+					button6.setBackground(color);
 					juego.setColorresp(5, color);
 					
 				}
 				if(MouseEvent.BUTTON1==e.getButton()) {
-					Color color=button6.getForeground();
+					Color color=button6.getBackground();
 					color=Juego.cambiaColorMas(color,juego.getColordef());
-					button6.setForeground(color);
+					button6.setBackground(color);
 					juego.setColorresp(5, color);
 					
 				}
 			}
 		});
-		button6.setForeground(new Color(0, 0, 255));
+		button6.setBackground(new Color(0, 0, 255));
 		button6.setBounds(10,27,37,37);
 		add(button6);
 		
@@ -185,6 +185,8 @@ public class Juega extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				comp.setVisible(false);
 				juego.setIntento(juego.getIntento()+1);
+				Control prueba= new Control();
+				prueba.respuesta(juego.getColorresp(),new Color[] {new Color(255,0,0),new Color(255,0,0),new Color(255,0,0),new Color(255,0,0)});
 			}
 		});
 		comp.setBounds(292,32,59,32);

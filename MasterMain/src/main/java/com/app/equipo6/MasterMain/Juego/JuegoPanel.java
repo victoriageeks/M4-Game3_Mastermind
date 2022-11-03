@@ -21,32 +21,9 @@ public class JuegoPanel extends JPanel {
 		add(paneles[0]);
 		for(int i=1;i<juego.getMaxintent();i++) {
 			paneles[i]=new Juega(juego);
-			paneles[i].setVisible(false);
+			paneles[i].setVisible(true);
 			add(paneles[i]);
 		}
-		if(juego.getIntento()>0) {
-			paneles[1].setVisible(true);
-		}
-		if(juego.getIntento()>1) {
-			paneles[2].setVisible(true);
-		}
-		if(juego.getIntento()>2) {
-			paneles[3].setVisible(true);
-		}
-		if(juego.getIntento()>3) {
-			paneles[4].setVisible(true);
-		}
-		if(juego.getIntento()>4) {
-			paneles[5].setVisible(true);
-		}
-		if(juego.getIntento()>5) {
-			paneles[6].setVisible(true);
-		}
-		if(juego.getIntento()>6) {
-			paneles[7].setVisible(true);
-		}
-	
-
 	}
 
 }
