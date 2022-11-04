@@ -15,8 +15,9 @@ public class App
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					mainApp frame = new mainApp();
-					frame.setVisible(true);
+					MenuPrincipal menuPrincipal = new MenuPrincipal();
+					menuPrincipal.setVisible(true);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

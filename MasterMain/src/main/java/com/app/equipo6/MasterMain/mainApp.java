@@ -25,11 +25,11 @@ public class mainApp extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public mainApp() {
+	public mainApp(int nivel,int intentos) {
 		int maxintentos=6;
 		intento=0;
 		boolean comp=false;
-		colorrespuesta=new Color[6];
+		colorrespuesta=new Color[intentos];
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1085, 904);
@@ -39,7 +39,7 @@ public class mainApp extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1,3));
 		
-		PanelControl panelcontrol= new PanelControl(3);
+		PanelControl panelcontrol= new PanelControl(nivel);
 		Control control = new Control (panelcontrol.getRespuesta());
 		ControlJPanel controlp = new ControlJPanel(control,maxintentos);
 		Juego juego = new Juego(intento,maxintentos,panelcontrol.getDefaultColor(),colorrespuesta);
@@ -50,7 +50,6 @@ public class mainApp extends JFrame {
 		contentPane.add(controlp);
 		panelcontrol.setVisible(true);
 		contentPane.add(panelcontrol);
-		
 		
 		
 	}
