@@ -22,9 +22,7 @@ public class testSelectColor extends JFrame {
 				try {
 					testSelectColor frame = new testSelectColor();
 					frame.setVisible(true);
-					Problema prob= new Problema();
 					SelectColor selectColor = new SelectColor();
-					prob.getProblema(selectColor.getColors(),1) ;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
