@@ -19,33 +19,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class PanelControl extends JFrame {
+public class PanelControl extends JPanel {
 
-	private JPanel contentPane;
 	private Color[] respuesta;
 	private JButton[] buttonsSolucion;
 	private JButton[] buttonsCdisponibles;
 	private JButton intentos;
 	private Problema prob;
 	private Color[] disponibles;
+	private Color[] coloresdefault;
 	private int[] orden;
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PanelControl frame = new PanelControl(3);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public PanelControl(int i) {
 		//cargamos todos los datos necesarios de los colores para que funcione el panel;
 		ColoresDisponibles cd = new ColoresDisponibles();
@@ -53,41 +38,36 @@ public class PanelControl extends JFrame {
 		this.disponibles = prob.getColoresDisponibles();
 		this.respuesta = prob.getRespuesta();
 		this.orden = prob.getOrden();
+		this.coloresdefault= new Color[this.respuesta.length];
 		this.buttonsSolucion = new JButton[6];
 		this.buttonsCdisponibles = new JButton[6];
 		//cargamos todos los datos necesarios de los colores para que funcione el panel;
-		setTitle("Panel de Control");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 457, 449);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		setLayout(null);
 		
 		JButton btn1 = new JButton("");
 		btn1.setBounds(10, 23, 61, 59);
-		contentPane.add(btn1);
+		add(btn1);
 		
 		JButton btn2 = new JButton("");
 		btn2.setBounds(81, 23, 61, 59);
-		contentPane.add(btn2);
+		add(btn2);
 		
 		JButton btn3 = new JButton("");
 		btn3.setBounds(152, 23, 61, 59);
-		contentPane.add(btn3);
+		add(btn3);
 		
 		JButton btn4 = new JButton("");
 		btn4.setBounds(227, 23, 61, 59);
-		contentPane.add(btn4);
+		add(btn4);
 		
 		JButton btn5 = new JButton("");
 		btn5.setBounds(298, 23, 61, 59);
-		contentPane.add(btn5);
+		add(btn5);
 		
 		JButton btn6 = new JButton("");
 		btn6.setBounds(372, 23, 61, 59);
-		contentPane.add(btn6);
+		add(btn6);
 		
 		
 		this.buttonsSolucion[0] = btn1;
@@ -105,7 +85,7 @@ public class PanelControl extends JFrame {
 			}
 		});
 		btn7.setBounds(10, 221, 61, 59);
-		contentPane.add(btn7);
+		add(btn7);
 		
 		JButton btn8 = new JButton("");
 		btn8.addActionListener(new ActionListener() {
@@ -114,7 +94,7 @@ public class PanelControl extends JFrame {
 			}
 		});
 		btn8.setBounds(81, 221, 61, 59);
-		contentPane.add(btn8);
+		add(btn8);
 		
 		JButton btn9 = new JButton("");
 		btn9.addActionListener(new ActionListener() {
@@ -123,7 +103,7 @@ public class PanelControl extends JFrame {
 			}
 		});
 		btn9.setBounds(152, 221, 61, 59);
-		contentPane.add(btn9);
+		add(btn9);
 		
 		JButton btn10 = new JButton("");
 		btn10.addActionListener(new ActionListener() {
@@ -132,7 +112,7 @@ public class PanelControl extends JFrame {
 			}
 		});
 		btn10.setBounds(227, 221, 61, 59);
-		contentPane.add(btn10);
+		add(btn10);
 		
 		JButton btn11 = new JButton("");
 		btn11.addActionListener(new ActionListener() {
@@ -141,7 +121,7 @@ public class PanelControl extends JFrame {
 			}
 		});
 		btn11.setBounds(298, 221, 61, 59);
-		contentPane.add(btn11);
+		add(btn11);
 		
 		JButton btn12 = new JButton("");
 		btn12.addActionListener(new ActionListener() {
@@ -150,7 +130,7 @@ public class PanelControl extends JFrame {
 			}
 		});
 		btn12.setBounds(369, 221, 61, 59);
-		contentPane.add(btn12);
+		add(btn12);
 		
 		this.buttonsCdisponibles[0] = btn7;
 		this.buttonsCdisponibles[1] = btn8;
@@ -165,7 +145,7 @@ public class PanelControl extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(23, 163, 407, 48);
-		contentPane.add(lblNewLabel);
+		add(lblNewLabel);
 		
 		JButton btnMostrarSolucion = new JButton("mostrar solucion");
 		btnMostrarSolucion.addActionListener(new ActionListener() {
@@ -175,34 +155,34 @@ public class PanelControl extends JFrame {
 		});
 		btnMostrarSolucion.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnMostrarSolucion.setBounds(57, 105, 136, 59);
-		contentPane.add(btnMostrarSolucion);
+		add(btnMostrarSolucion);
 		
 		JButton btnVolverJugar = new JButton("Volver a Jugar");
 		btnVolverJugar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnVolverJugar.setBounds(319, 356, 111, 48);
-		contentPane.add(btnVolverJugar);
+		add(btnVolverJugar);
 		
 		JLabel intentos = new JLabel("intentos:");
 		intentos.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		intentos.setBounds(10, 354, 77, 48);
-		contentPane.add(intentos);
+		add(intentos);
 		
 		JLabel lblNewLabel_1 = new JLabel("Facíl");
 		lblNewLabel_1.setBounds(231, 205, 57, 13);
-		contentPane.add(lblNewLabel_1);
+		add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Normal");
 		lblNewLabel_1_1.setBounds(302, 205, 57, 13);
-		contentPane.add(lblNewLabel_1_1);
+		add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Dificil");
 		lblNewLabel_1_1_1.setBounds(373, 205, 57, 13);
-		contentPane.add(lblNewLabel_1_1_1);
+		add(lblNewLabel_1_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Todos los niveles");
 		lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2.setBounds(14, 205, 199, 13);
-		contentPane.add(lblNewLabel_1_2);
+		add(lblNewLabel_1_2);
 		
 		JButton btnOcultarSolucion = new JButton("ocultar solucion");
 		btnOcultarSolucion.addActionListener(new ActionListener() {
@@ -212,22 +192,22 @@ public class PanelControl extends JFrame {
 		});
 		btnOcultarSolucion.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnOcultarSolucion.setBounds(227, 105, 136, 59);
-		contentPane.add(btnOcultarSolucion);
+		add(btnOcultarSolucion);
 		
 		JButton btnCambiarColor = new JButton("Cambiar Colores");
 		btnCambiarColor.setBounds(261, 290, 150, 53);
-		contentPane.add(btnCambiarColor);
+		add(btnCambiarColor);
 		
 		JButton btnIntentos = new JButton("");
 		btnIntentos.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnIntentos.setBackground(new Color(128, 255, 255));
 		btnIntentos.setBounds(95, 361, 47, 41);
-		contentPane.add(btnIntentos);
+		add(btnIntentos);
 		this.intentos = btnIntentos;
 		
 		JButton btnColoresDisponibles = new JButton("Recargar Colores");
 		btnColoresDisponibles.setBounds(39, 291, 150, 53);
-		contentPane.add(btnColoresDisponibles);
+		add(btnColoresDisponibles);
 		btnCambiarColor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setColoresJuego();
@@ -241,6 +221,7 @@ public class PanelControl extends JFrame {
 		});
 		//setea el color de juego segun el orden;
 		setColoresJuego();
+		setDefaultColor();
 	}
 	
 	//funciones
@@ -286,9 +267,24 @@ public class PanelControl extends JFrame {
 		}
 		//ocultamos los colores antes para realizar el cambio
 		ocultarRespuesta();
+		setDefaultColor();
+	}
+	public void setDefaultColor() {
+		for (int i = 0; i < this.respuesta.length; i++) {
+			this.coloresdefault[i] = this.disponibles[i];
+		}
+	}
+	public Color[] getDefaultColor() {
+		return this.coloresdefault;
 	}
 	
 	public void setIntentos(String aux) {
 		this.intentos.setText(aux);
+	}
+	public Color[] getRespuesta() {
+		return this.respuesta;
+	}
+	public Color[] getDisponibles() {
+		return this.disponibles;
 	}
 }
