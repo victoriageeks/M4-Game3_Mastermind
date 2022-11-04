@@ -58,7 +58,6 @@ public class Problema {
 			int random = (int) (Math.random() * (nivel(i)));
 			this.orden[j] = random;
 			colors[j] = colors[random];
-			System.out.println(random);
 		}
 		this.respuesta = colors;
 	}

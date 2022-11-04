@@ -34,7 +34,7 @@ public class PanelControl extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PanelControl frame = new PanelControl();
+					PanelControl frame = new PanelControl(3);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,10 +46,10 @@ public class PanelControl extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public PanelControl() {
+	public PanelControl(int i) {
 		//cargamos todos los datos necesarios de los colores para que funcione el panel;
 		ColoresDisponibles cd = new ColoresDisponibles();
-		this.prob = new Problema(cd.getAllcolors(),1);
+		this.prob = new Problema(cd.getAllcolors(),i);
 		this.disponibles = prob.getColoresDisponibles();
 		this.respuesta = prob.getRespuesta();
 		this.orden = prob.getOrden();
