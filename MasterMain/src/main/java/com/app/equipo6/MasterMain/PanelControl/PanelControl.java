@@ -157,16 +157,6 @@ public class PanelControl extends JPanel {
 		btnMostrarSolucion.setBounds(57, 105, 136, 59);
 		add(btnMostrarSolucion);
 		
-		JButton btnVolverJugar = new JButton("Volver a Jugar");
-		btnVolverJugar.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnVolverJugar.setBounds(319, 356, 111, 48);
-		add(btnVolverJugar);
-		
-		JLabel intentos = new JLabel("intentos:");
-		intentos.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		intentos.setBounds(10, 354, 77, 48);
-		add(intentos);
-		
 		JLabel lblNewLabel_1 = new JLabel("Facíl");
 		lblNewLabel_1.setBounds(231, 205, 57, 13);
 		add(lblNewLabel_1);
@@ -197,13 +187,6 @@ public class PanelControl extends JPanel {
 		JButton btnCambiarColor = new JButton("Cambiar Colores");
 		btnCambiarColor.setBounds(261, 290, 150, 53);
 		add(btnCambiarColor);
-		
-		JButton btnIntentos = new JButton("");
-		btnIntentos.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnIntentos.setBackground(new Color(128, 255, 255));
-		btnIntentos.setBounds(95, 361, 47, 41);
-		add(btnIntentos);
-		this.intentos = btnIntentos;
 		
 		JButton btnColoresDisponibles = new JButton("Recargar Colores");
 		btnColoresDisponibles.setBounds(39, 291, 150, 53);
