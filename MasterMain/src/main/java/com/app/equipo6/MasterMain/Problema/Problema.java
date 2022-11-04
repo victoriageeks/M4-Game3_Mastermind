@@ -6,58 +6,69 @@ import java.util.Collections;
 
 public class Problema {
 	private Color[] respuesta;
-	private Color[] coloresDisponibles;
+	private Color[] coloresDisponibles = {null};
+	private int[] orden;
 	
 	public Problema(ArrayList<Color> colores,int i) {
-		Color[] colors = getColoresDisponibles(colores,i);
-		for (int j = 0; j < colors.length; j++) {
-			int random = (int) (Math.random() * (colors.length-1));
-			colors[j] = colors[random]; 
-			System.out.println(random);
-			
+		//si es la primera vez que se juega se utilizan todos los colores;
+		//si no es los que el usuario eligio;
+		if(this.coloresDisponibles[0] == null) {
+			this.coloresDisponibles = getColoresDisponibles(colores);
 		}
-		this.respuesta = colors;
+		for (Color color : colores) {
+		}
+		Color[] colors = new Color[nivel(i)];
+		this.orden = new int[this.coloresDisponibles.length];
+		for (int j = 0; j < colors.length; j++) {
+			colors[j] = this.coloresDisponibles[j];	
+		}
+		generarProblema(colors,i);
+
 	}
 	
 	public Color[] getRespuesta() {
-		return respuesta;
+		return this.respuesta;
 	}
 
 	public Color[] getColoresDisponibles() {
-		return coloresDisponibles;
+		return this.coloresDisponibles;
 	}
-
 	
-	private Color[] getColoresDisponibles(ArrayList<Color> colores,int i) {
+	public int[] getOrden() {
+		return this.orden;
+	}
+	
+	private Color[] getColoresDisponibles(ArrayList<Color> colores) {
 		Collections.shuffle(colores);
 		//borramos los colores sobrantes segun el nivel
-			for (int j = nivel(i); j < colores.size(); j++) {
-				colores.remove(j);
-				}
-			int aux = (colores.size()-1);
-				colores.remove(aux);
-		Color[] colors = new Color[colores.size()];
-		aux = 0;
-		for (Color color : colores) {
-			colors[aux] = color;
-			aux++;
-		}
-		for (int j = 0; j < colors.length; j++) {
-			System.out.println("c1:" + colors[j].getRed() 
-			+ colors[j].getGreen() 
-			+ colors[j].getGreen());
-		}
-		this.coloresDisponibles = colors;
+		int aux=0;
+		Color[] colors = new Color[6];
+			for (Color color : colores) {
+				colors[aux] = color;
+				aux++;
+				if(aux == 6) {break;}
+			}
 		return colors;
 	}
 	
+	//genera el el problema (la respuesta)
+	//y asigna el orden de los colores
+	public void generarProblema(Color[] colors,int i) {
+		for (int j = 0; j < nivel(i); j++) {
+			int random = (int) (Math.random() * (nivel(i)));
+			this.orden[j] = random;
+			colors[j] = colors[random];
+			System.out.println(random);
+		}
+		this.respuesta = colors;
+	}
 	//segun el nivel seleciona una cantidad minima de colores
 	private int nivel(int i) {
 		switch (i) {
-		case 1: return 0;
-		case 2: return 2;
-		case 3: return 4;
-		default: return 4;
+		case 1: return 4;
+		case 2: return 5;
+		case 3: return 6;
+		default: return 6;
 		}
 	}
 	

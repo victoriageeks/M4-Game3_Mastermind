@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class Control {
 	private int contador;
 	private Color[] resp;
-	private ArrayList<Color> intentos;
+	private ArrayList<Color[]> intentos;
 	
 	public int getContador() {
 		return contador;
 	}
 
-	public ArrayList<Color> getIntentos() {
+	public ArrayList<Color[]> getIntentos() {
 		return intentos;
 	}
 
@@ -20,7 +20,7 @@ public class Control {
 		this.contador = 0;
 		this.resp = respuesta;
 	}
-	public Color[] respuesta(Color[] b) {
+	public void respuesta(Color[] b) {
 		int count = 0;
 		Color[] a=this.resp;
 		this.contador++;
@@ -68,7 +68,7 @@ public class Control {
 					}
 				}
 			}
-		return respuesta;
+		this.intentos.add(respuesta);
 		}
 		//si el color y posicion coinciden devuelve true
 		public boolean control(Color[] a,Color b[],int i) {
