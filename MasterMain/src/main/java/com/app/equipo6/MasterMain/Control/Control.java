@@ -6,24 +6,30 @@ import java.util.ArrayList;
 public class Control {
 	private int contador;
 	private Color[] resp;
-	private ArrayList<Color[]> intentos;
+	private Color[][] intentos;
 	
 	public int getContador() {
 		return contador;
 	}
 
-	public ArrayList<Color[]> getIntentos() {
+	public Color[][] getIntentos() {
 		return intentos;
 	}
 
 	public Control(Color[] respuesta) {
 		this.contador = 0;
 		this.resp = respuesta;
+		this.intentos= new Color[8][this.resp.length];
+		for(int i=0;i<this.intentos.length;i++) {
+			for(int j=0;j<this.resp.length;j++) {
+				this.intentos[i][j]= Color.white;
+			}
+		}
 	}
-	public void respuesta(Color[] b) {
+	public Color[] respuesta(Color[] b) {
 		int count = 0;
 		Color[] a=this.resp;
-		this.contador++;
+		
 		Color[] respuesta = new Color[a.length];
 		boolean[] auxb = new boolean[a.length];
 		boolean[] auxa = new boolean[a.length];
@@ -68,7 +74,9 @@ public class Control {
 					}
 				}
 			}
-		this.intentos.add(respuesta);
+		this.intentos[this.contador]=respuesta;
+		this.contador++;
+		return respuesta;
 		}
 		//si el color y posicion coinciden devuelve true
 		public boolean control(Color[] a,Color b[],int i) {
@@ -87,5 +95,21 @@ public class Control {
 			}
 			return false;
 		}
+		
+	public Color[] getRespuesta() {
+		return this.resp;
+	}
+	public void setContador(int cont) {
+		this.contador=cont;
+	}
+	public Boolean compMatrix(Color[] comp) {
+		int i=0;
+		while(i<comp.length) {
+			if(comp[i].getRed() != Color.BLACK.getRed() || comp[i].getGreen() !=  Color.BLACK.getGreen()
+					|| comp[i].getBlue() !=  Color.BLACK.getBlue()) return false;
+			i++;
+		}
+		return true;
+	}
 		
 }

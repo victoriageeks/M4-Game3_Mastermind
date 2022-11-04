@@ -15,9 +15,12 @@ public class Juego {
 		this.setIntento(intent);
 		this.setMaxintent(maxintentos);
 		this.setColordef(colordefault);
-		this.setColorresp(colorrespuesta);
+		this.colorresp= new Color[colordefault.length];
+		for(int i=0;i<colordefault.length;i++) {
+			this.colorresp[i]=colordefault[0];
+		}
 	}
-	public static Color cambiaColorMas(Color color, Color[] jdcolores) {
+	public  Color cambiaColorMas(Color color, Color[] jdcolores) {
 		int i=compruebacolor(color,jdcolores);
 		if(i!=(jdcolores.length)-1) i++;
 		else i=0;
@@ -25,7 +28,7 @@ public class Juego {
 	}
 
 
-	public static Color cambiaColorMenos(Color color, Color[] jdcolores) {
+	public  Color cambiaColorMenos(Color color, Color[] jdcolores) {
 		
 		int i=compruebacolor(color,jdcolores);
 		if(i!=0) i--;
@@ -34,10 +37,11 @@ public class Juego {
 	}
 	
 
-	private static int compruebacolor(Color color, Color[] jdcolores) {
+	private  int compruebacolor(Color color, Color[] jdcolores) {
 		// TODO Auto-generated method stub
 		int i=0;
-		while(color!=jdcolores[i]&& i<jdcolores.length) {
+		while( i<jdcolores.length) {
+			if(color==jdcolores[i]) return i;
 			i++;
 		}
 		return i;

@@ -9,8 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import com.app.equipo6.MasterMain.Control.Control;
+import com.app.equipo6.MasterMain.Control.ControlJPanel;
 import com.app.equipo6.MasterMain.Juego.Juego;
 import com.app.equipo6.MasterMain.Juego.JuegoPanel;
+import com.app.equipo6.MasterMain.PanelControl.PanelControl;
 import com.app.equipo6.MasterMain.Problema.Problema;
 import com.app.equipo6.MasterMain.SelectColor.SelectColor;
 
@@ -24,31 +26,31 @@ public class mainApp extends JFrame {
 	 * Create the frame.
 	 */
 	public mainApp() {
-		int maxintentos=8;
+		int maxintentos=6;
 		intento=0;
 		boolean comp=false;
-		colorrespuesta=new Color[4];
-		//dani con esto se crea el problema y se obtiene los colores selecionados
-		//en selectColor tiene como minimo 8 y usa un arraylist
-		//en problema tenes 2 get para obtener los colores en juego que en este caso son 4
-		// y la respuesta:)
-		// despues en Control tenes un arrayList con los intentos, el resultado espereado
-		//SelectColor selectColor = new SelectColor();
-		//Problema prob= new Problema(selectColor.getColors(),1);
-		//esto
-		// lo deje igual que estaba antes esta funcionando igual
-		//pero con lo que me pediste y con los metodos cambiados en el main
+		colorrespuesta=new Color[6];
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1085, 904);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		//Control control = new Control (prob.getRespuesta());
+		
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1,3));
-		Juego juego = new Juego(intento,maxintentos,colordefault,colorrespuesta);
-		//JuegoPanel juegopanel = new JuegoPanel(juego,control);
-		//juegopanel.setVisible(true);
-		//contentPane.add(juegopanel);
+		
+		PanelControl panelcontrol= new PanelControl(3);
+		Control control = new Control (panelcontrol.getRespuesta());
+		ControlJPanel controlp = new ControlJPanel(control,maxintentos);
+		Juego juego = new Juego(intento,maxintentos,panelcontrol.getDefaultColor(),colorrespuesta);
+		JuegoPanel juegopanel = new JuegoPanel(juego,control,controlp);
+		juegopanel.setVisible(true);
+		contentPane.add(juegopanel);
+		controlp.setVisible(true);
+		contentPane.add(controlp);
+		panelcontrol.setVisible(true);
+		contentPane.add(panelcontrol);
+		
 		
 		
 	}
