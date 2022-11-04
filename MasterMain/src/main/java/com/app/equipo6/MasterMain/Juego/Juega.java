@@ -45,7 +45,7 @@ public class Juega extends JPanel {
 				}
 			}
 		});
-		button1.setBackground(juego.getColordef(0));
+		button1.setBackground(juego.getColordef()[0]);
 		button1.setBounds(57,27,37,37);
 		add(button1);
 		
@@ -168,7 +168,7 @@ public class Juega extends JPanel {
 				}
 			}
 		});
-		button6.setBackground(new Color(0, 0, 255));
+		button6.setBackground(juego.getColordef()[0]);
 		button6.setBounds(10,27,37,37);
 		add(button6);
 		

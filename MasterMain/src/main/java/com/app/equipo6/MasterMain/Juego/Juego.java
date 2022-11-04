@@ -22,7 +22,7 @@ public class Juego {
 	}
 	public  Color cambiaColorMas(Color color, Color[] jdcolores) {
 		int i=compruebacolor(color,jdcolores);
-		if(i!=(jdcolores.length)) i++;
+		if(i<(jdcolores.length)-1) i++;
 		else i=0;
 		return jdcolores[i];
 	}

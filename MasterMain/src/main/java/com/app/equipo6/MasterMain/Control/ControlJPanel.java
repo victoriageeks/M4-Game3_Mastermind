@@ -38,7 +38,6 @@ public class ControlJPanel extends JPanel {
 		int intento= (control.getContador())-1;
 		for(int i=0;i<control.getRespuesta().length;i++) {
 			this.cbutton[intento][i].setBackground(comp[i]);
-			System.out.println(this.cbutton[intento].length);
 		}
 		
 	}
